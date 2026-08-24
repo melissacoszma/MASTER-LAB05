@@ -5,6 +5,7 @@ import { HeaderPrivateComponent } from './components/layout/header-private/heade
 import { MenuPublicComponent } from './components/layout/menu-public/menu-public.component';
 import { MenuPrivateComponent } from './components/layout/menu-private/menu-private.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -21,4 +22,6 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 })
 export class AppComponent {
   title = 'angular-lab';
+
+  constructor(public authService: AuthService) {} // publico porque necesitamos acceder directamente desde el html
 }

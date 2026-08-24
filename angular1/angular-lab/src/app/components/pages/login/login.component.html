@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div class="login-container">
+  <h2>Login</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"> <!--  enlaza el formulario con lo que definimos en el ts, ngSubmit = evento especial de angular para formularios mejor que usar (click) -->
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="username" type="email" placeholder="tu email">
+      @if (loginForm.get('username')?.touched && loginForm.get('username')?.hasError('required')) {
+        <mat-error>Es obligatorio introducir un email</mat-error>
+      }
+      @if (loginForm.get('username')?.touched && loginForm.get('username')?.hasError('email')) {
+        <mat-error>El formato del email no es válido</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Contraseña</mat-label>
+      <input matInput formControlName="password" type="password">
+      @if (loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')) {
+        <mat-error>La contraseña es obligatoria</mat-error>
+      }
+      @if (loginForm.get('password')?.touched && loginForm.get('password')?.hasError('minlength')) {
+        <mat-error>La contraseña debe tener al menos 8 caracteres</mat-error>
+      }
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
+      Entrar
+    </button>
+
+  </form>
+</div>
