@@ -1,1 +1,20 @@
-<p>menu-private works!</p>
+<!-- <nav>
+   Enlaces del menú privado, solo visibles cuando el usuario está logueado 
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/gallery">Galería</a>
+  <a routerLink="/crud">CRUD</a>
+  <a routerLink="/profile">Profile</a>
+</nav> -->
+
+<mat-toolbar color="primary">
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/gallery">Galería</a>
+  <a routerLink="/crud">CRUD</a>
+  <a routerLink="/profile">Profile</a>
+
+  <div class="user">
+  <span>{{ authService.getUsername() }}</span>
+  <button mat-raised-button color="warn" (click)="onLogout()">Salir</button>
+  </div>
+
+</mat-toolbar>

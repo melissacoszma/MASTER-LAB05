@@ -1,0 +1,17 @@
+mat-toolbar {
+  background: linear-gradient(180deg, #CCE64D, white);
+  color: white;
+  
+}
+
+a {
+  color: #d11d71;
+  text-decoration: none;
+  margin-right: 16px;
+  font-size: 16px;
+  
+
+  &:hover {
+    color: #a30026;
+  }
+}

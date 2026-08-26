@@ -1,17 +1,23 @@
+
+
+<app-header-public></app-header-public>
+
 <!-- si el usuario NO está logueado muestra la cabecera y menu publico -->
 @if (!authService.isLogged()) {
-  <app-header-public></app-header-public>
+  
   <app-menu-public></app-menu-public>
 }
 
 <!-- si el usuario SÍ está logueado muestra la cabecera y menu privado -->
 @if (authService.isLogged()) {
-  <app-header-private></app-header-private>
+  
   <app-menu-private></app-menu-private>
 }
 
 <!-- router-outlet siempre visible, aquí se renderiza la pagina actual -->
-<router-outlet></router-outlet>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
 
 <!-- footer siempre visible -->
 <app-footer></app-footer>

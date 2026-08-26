@@ -1,0 +1,26 @@
+mat-toolbar {
+  background: linear-gradient(180deg, #CCE64D, white);
+  color: white;
+  justify-content: space-between;
+}
+
+a {
+  color: #d11d71;
+  text-decoration: none;
+  font-size: 16px;
+  padding-inline: 16px;
+
+  &:hover {
+    color: #a30026;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto; // empuja el bloque a la derecha
+  color: #d11d71;
+  font-size: 16px;
+  
+}
